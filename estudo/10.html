@@ -1,0 +1,37 @@
+<!DOCTYPE HTML>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" type="text/css" href="">
+<title></title>
+</head>
+<body>
+    <form>
+        <h3>Digite números aleatórios</h3>
+        <input type="text" id="num1">
+        <input type="text" id="num2">
+        <input type="text" id="num3">
+        <input type="text" id="num4">
+        <input type="text" id="num5">
+        <input type="button" onclick="Inverter()" value="Mostar">
+        <label id="teste"></label>
+    </form>
+</div>
+
+<script>
+
+function Inverter(){
+
+var arr = [ (document.getElementById("num1").value), (document.getElementById("num2").value), (document.getElementById("num3").value), (document.getElementById("num4").value), (document.getElementById("num5").value)];
+
+arr.sort(function(a,b){ 
+   
+   return b-a;});
+
+    document.getElementById("teste").innerHTML = 'Ordem Decrescente: [ ' + arr +' ]';
+}
+
+
+</script>
+</body>
+</html>

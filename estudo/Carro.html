@@ -1,0 +1,26 @@
+<!DOCTYPE HTML>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" type="text/css" href="">
+<title></title>
+</head>
+<body>
+    Modelo Carro: <br> 
+    <input type="text" id="modeloCarro"> <br>
+    Preço em Reais: <br>
+    <input type="text" id="precoCarro"> <br><br>
+    <input type="button" value="Ver promoção" onclick="Go()">
+
+    <script>
+        function Go(){
+            var modeloCarro = document.getElementById("modeloCarro").value;
+            var precoCarro = Number(document.getElementById("precoCarro").value);
+            var promocao = precoCarro/2;
+
+            alert(modeloCarro + " com a entrada de " + promocao + " e 12 parcelas de " + (promocao/12));
+        }
+    </script>
+
+</body>
+</html>

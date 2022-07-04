@@ -1,0 +1,35 @@
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Questão 2</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+</head>
+<body>
+    <div>
+        <form>
+            <h3>Fila de clientes</h3>
+            <label>Digite seu nome:</label>
+            <input type="text" id="cliente">
+            <input id="botao" type="button" onclick="inserirFila()" value="Entrar na fila">
+            <input id="botao" type="button" onclick="removerFila()" value="Atendido">
+            <br>
+            <label id="nomes"></label>
+        </form>
+    </div>
+</body>
+<script>   
+    let fila = [];
+    function inserirFila() {
+        fila.push(document.getElementById('cliente').value);
+        mostrarFila();
+    }
+    function removerFila() {
+        fila.shift(document.getElementById('cliente').value);
+        mostrarFila();
+    }
+    function mostrarFila() {
+        document.getElementById("nomes").innerHTML = fila + ',';
+    }
+</script>
+</html>

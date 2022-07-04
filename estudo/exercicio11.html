@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/style.css" type="text/css" media="all" />
+    <title>Exercicio 11</title>
+
+</head>
+
+<body>
+    <form id="form" action="" method="get">
+        <h3>Cálculo da Tabuada:</h3>
+        <p>
+            <label for="numero">Digite o Número da Tabuada: </label>
+            <input type="text" id="numero" name="numero" value="" />
+        </p>
+        <p>
+            <input type="button" value="Calcular" onclick="calcula_tabuada();" />
+        </p>
+    
+
+    <table id="myTable">
+
+            <tr>
+                <td>Número</td>
+                <td>Multiplicador</td>
+                <td>Resultado</td>
+            </tr>
+       
+    </table>
+</form>
+    <script>
+        function calcula_tabuada() {
+            var form = document.getElementById('form');
+            var n = form.numero.value;
+            var table = document.getElementById("myTable");
+
+            if (n.match(/^[0-9]+$/)) {
+                var num = parseInt(n);  
+                var resultado = 0;
+                tabuada = "";
+                for (i = 10; i > 0; i--) {
+                    resultado = num * i;
+                    var row = table.insertRow(1); //Seleciona a 1ª linha da tabela
+                    var cell1 = row.insertCell(0); //Insere td numero
+                    var cell2 = row.insertCell(1); //Insere td Multiplicador
+                    var cell3 = row.insertCell(2); //Insere td Resultado
+                    cell1.innerHTML = num;; //Valor do numero
+                    cell2.innerHTML = i;; //Valor do Multiplicador
+                    cell3.innerHTML = resultado;; //Valor do Resultado
+                }
+                table.style.display = "block"; //Torna a tabella visível
+            } else {
+                alert("Digite um número inteiro válido.");
+            }
+        }
+
+    </script>
+
+</html>

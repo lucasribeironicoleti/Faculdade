@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <link rel="stylesheet" href="css/style.css" type="text/css" media="all" />
+    <title>Exercicio 04</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+</head>
+
+<body>
+
+
+    <div>
+        <form>
+           
+           VETOR:<label id="teste1"></label><br>    
+
+            <input type="button" onclick="Calcular()" value="Mostar">
+
+            <label id="teste2"></label>
+
+        </form>
+    </div>
+
+</body>
+
+<script>
+    
+     
+
+    var arr = [ 1 , 2 , 'Everton' , 4 , 'Gisele', 5 , 89 , 'cachorro', '1ab', 15775];
+    
+    document.getElementById("teste1").innerHTML = '[ ' + arr +' ]';
+    
+    function Calcular(){
+        
+    function filtrarArray(element) {
+      return (typeof   element == 'string');
+        
+    }
+
+    var x = arr.filter(filtrarArray);
+
+    
+        document.getElementById("teste2").innerHTML = 'VETOR DE S   TRINGS: [ ' + x +' ]';
+    }
+    
+
+</script>
+
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE HTML>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="">
+    <title></title>
+</head>
+
+<body>
+
+    <body>
+        <form>
+            Primeiro Array A:<label id="array1"></label><br><br>
+            Segundo Array B:<label id="array2"></label><br><br>
+
+            <input type="button" onclick="Calcular()" value="Calcular">
+
+            Terceiro Array C, números pares concatenados:<label id="array3"></label>
+
+        </form>
+
+
+
+        <script>
+            var num1 = new Array(5);
+            var num2 = new Array(5);
+
+            for (i = 0; i < 5; i++) {
+                num1[i] = Math.floor(Math.random() * 29) + 1;
+                num2[i] = Math.floor(Math.random() * 50) + 5;
+
+            }
+
+            document.getElementById("array1").innerHTML = '[ ' + num1 + ' ]';
+            document.getElementById("array2").innerHTML = '[ ' + num2 + ' ]';
+
+            function Calcular() {
+                var num3 = num1.concat(num2);
+
+
+                function filtrarArray(elem, ind, obj) {
+                    return (elem % 2 == 0);
+
+                }
+
+                var x = num3.filter(filtrarArray);
+
+
+                document.getElementById("array3").innerHTML = '  ' + x + '  ';
+            }
+        </script>
+    </body>
+
+</html>

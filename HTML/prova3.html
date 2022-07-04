@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Questão 3</title>
+    </head>
+    <body>
+        <div>
+            <label>Distancia(KM): </label>
+            <input type="number" id="distancia">
+            <br>
+            <label>Consumo do Veiculo(Km/Litro):</label>
+            <input type="number" id="consumo">
+            <br>
+            <label>Valor do litro de Combustivel:</label>
+            <input type="number" id="valor">
+        </div>
+        <br>
+        <button type="button" onclick="calcular()">Calcule</button>
+        <br>
+        <div>
+            <p>Resultados:</p>
+            <p>Litros gastos:</p>
+            <p id="litros"></p>
+            <br>
+            <p>Valor gasto:</p>
+            <p id="valorgasto"></p>
+        </div>
+    </body>
+</html>
+
+<script>
+    function calcular() {
+        var distancia = document.getElementById('distancia').value;
+        var consumo = document.getElementById('consumo').value;
+        var valor = document.getElementById('valor').value;
+
+        var litros = distancia / consumo;
+        var valorgasto = litros * valor;
+
+		document.getElementById('litros').innerHTML = litros;
+        document.getElementById('valorgasto').innerHTML = valorgasto;
+    }
+</script>

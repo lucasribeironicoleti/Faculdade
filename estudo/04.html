@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="">
+    <title></title>
+</head>
+
+<body>
+
+    <body>
+        <div>
+            <form>
+                Array já definido:<label id="teste1"></label><br>
+                <input type="button" onclick="Calcular()" value="Mostar">
+                <label id="teste2"></label>
+            </form>
+        </div>
+
+        <script>
+
+            var arr = ['Queria ', 1, 2, 'estar ', 4, 5, 6, 'morta ', 9, 10];
+            document.getElementById("teste1").innerHTML = '[ ' + arr + ' ]';
+
+            function Calcular() {
+                function filtrarArray(element) {
+                    return (typeof element == 'string');
+                }
+                var x = arr.filter(filtrarArray);
+                document.getElementById("teste2").innerHTML = 'VETOR DE S   TRINGS: [ ' + x + ' ]';
+            }
+        </script>
+    </html>
+</body>
+

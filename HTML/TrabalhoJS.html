@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTH-8">
+    <title>JS 3 Atividade</title>
+</head>
+
+<body>
+    <script>
+
+        /*Para entrada de dados: promt(); e para saída console.log();
+        Faça um programa que receba um número e mostre seus vizinhos;
+        Faça um programa para pizzaria que leia o valor de uma conta e quantos clientes vão pagá-la. Calcule e informe o valor a ser pago por cliente;
+        Faça um programa para uma loja, que leia o preço de um produto e informe as opções de pagamento.  Calcule e informe o valor para pagamento à vista com 10% de desconto e o valor em 3x.*/
+        
+        var numero = Number(prompt("Digite um número inteiro", "Escreva aqui:")); 
+        console.log("Seus vizinhos são: "+ (numero - 1) + "," + numero + "," + (numero+1));
+
+        var valorConta = Number(prompt("Digite o valor da conta", "Escreva aqui:"));
+        var quantidadePessoas = Number(prompt("Digite quantos clientes vão dividir a conta", "Escreva aqui:"));
+        var resultadoTotal = valorConta/quantidadePessoas;
+        console.log("O valor por cliente é de: " + resultadoTotal.toFixed(2));
+
+        var valorProduto = Number(prompt("Digite o valor do produto", "Escreva aqui"));
+        var valorDesconto = (valorProduto-(10*valorProduto)/100);
+        var valorParcela = valorProduto/3;
+        console.log("O valor a vista é: " + valorDesconto.toFixed(2));
+        console.log("O valor da parcela em 3 vezes é de: " + valorParcela.toFixed(2));
+
+       /* var nome = prompt("Digite seu nome", "Escreva aqui:"); // Segunda aspas é o placeholder
+        document.write("<h1>" + nome + "</h1>");
+        
+        // parseInt("15",16); Tem que passar a base?
+        var num1 = parseInt(prompt("Transforma em inteiro"));
+        var num2 = parseFloat(prompt("Transforma em real"));
+        var num3 = Number(prompt("Transforma o TXT em número real ou inteiro"));
+        
+        var titulo = prompt("Digite o nome da pagina");
+        document.title = titulo;
+        document.bgColor = "Blue";*/
+        
+
+        // usar "Esse documento \' VARIAVEL \' continua"
+
+        
+
+    </script>
+
+</html>
+</body>

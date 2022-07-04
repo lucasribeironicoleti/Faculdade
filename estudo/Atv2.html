@@ -1,0 +1,46 @@
+<!DOCTYPE HTML>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" type="text/css" href="">
+<title>Atv 2</title>
+</head>
+<body>
+	<form>
+		<label for="senha1"> Senha:</label>
+		<input type="password" id="senha1"> <br />
+		<label for="senha2">Repita a senha:</label> 
+		<input type="password" id="senha2"> <br />
+		<input type="button" value="Validar" onClick="senhaValida()">
+
+	</form>
+	<script>
+		function senhaValida() {
+			var senha1 = document.getElementById("senha1").value;
+			var senha2 = document.getElementById("senha2").value;
+			if (senha1 === senha2) {
+
+				var senha = senha1;
+				var regex = /^(?=(?:.*?[A-Z]){1})(?=(?:.*?[a-z]){1})(?=(?:.*?[0-9]){1})(?=(?:.*?[!@#$%*()_+^&}{:;?.]){1})(?!.*\s)[0-9a-zA-Z!@#$%;*(){}_+^&]*$/;
+
+				if (senha.length > 8 && senha.length < 15) {
+					alert("A senha deve conter no minímo 8 digitos e maximo 15 digitos!");
+					document.formulario.senha.focus();
+					return false;
+				}
+				else if (!regex.exec(senha)) {
+					alert("A senha deve conter no mínimo 1 caracter em maiúsculo, 1 caracter minuscolo, 1 número e 1 caractere especial!");
+					//document.formulario.senha.focus();
+					return false;
+				}
+				return console.log("Senha confirmada, meu deus, eu sou mto inteligente!!!!");
+
+			}
+			else {
+					alert("As senhas devem ser iguais!!")
+				}
+			}
+	</script>
+</body>
+
+</html>

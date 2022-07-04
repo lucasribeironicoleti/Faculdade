@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="number" id="numero" > X <input type="number" id="multiplicador">
+    <input type="button" onclick="multiplicar();" name="name" value="Multiplicar">
+    <input type="text" id="txtResultado" value="">
+    <script>
+        function multiplicar(){
+            
+            var num1 = document.getElementById("numero").value;
+            var num2 = document.getElementById("multiplicador").value
+            var resultado = parseFloat(num1 * num2);
+
+            document.getElementById('txtResultado').setAttribute("value", resultado);
+        }
+    </script>
+</body>
+</html>

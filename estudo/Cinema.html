@@ -1,0 +1,50 @@
+<!DOCTYPE HTML>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" type="text/css" href="">
+<title></title>
+</head>
+<body>
+    <!--8) Cada espectador de um cinema respondeu a um questionário no qual constava sua idade e a sua opinião em relação ao filme: ótimo - 3, bom - 2, regular -1.
+Faça um programa que receba a idade e a opinião de 15 espectadores, calcule e imprima:
+- a média das idades das pessoas que responderam ótimo;
+- a quantidade de pessoas que responderam regular;
+- a porcentagem de pessoas que responderam bom entre todos os espectadores analisados.-->
+
+Pesquisa do Cinema de Santa Fé do Sul <br>
+Deixe sua opnião em relação ao filme: (3) Ótimo, (2) Bom, (1) Regular, qualquer outro valor sera desconsiderado!
+<input type="button" value="Enviar" onclick="somar()">
+
+<script>
+    function somar(){
+        var media = 0, otimo = 0, regular=0, bom=0;
+        var mediaOtimo = 0, mediaBom = 0, mediaRegular = 0;
+    for ( i = 0; i < 15; i++) {
+        var idade = Number(prompt("Qual seu Idade?"));
+        var opniao = Number(prompt("Qual Sua Opinião?", "Opçao"));
+        //String opcao = selectedValue + "";
+        if(opniao == 3){
+            mediaOtimo = mediaOtimo + idade;
+            otimo++;
+        }
+        else if(opniao == 2){
+            mediaBom = mediaBom + idade;
+            bom++;
+        }
+        else if(opniao == 1){
+            mediaRegular = mediaRegular + idade;
+            regular++;
+        }
+    }
+  
+    alert("A media das idades das pessoas que responderam ótimo: " + (mediaOtimo/otimo)+" ANOS");
+    alert("A quantidade de pessoas que respondeu regular: " + regular);
+    alert("A porcentagem de pessoas que respondeu bom entre todos os espectadores analisados: " + bom*100/15+"%");
+  }
+    
+</script>
+
+
+</body>
+</html>

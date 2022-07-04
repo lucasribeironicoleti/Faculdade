@@ -1,0 +1,71 @@
+<!DOCTYPE HTML>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="">
+    <title></title>
+</head>
+        <body>
+            <!-- 2. (4,0) Em um terminal de caixa eletrônico, estão disponíveis apenas notas de 5, 10, 50 e 100. Faça um programa que leia o valor do saque (verifique se pode ser pago com as notas disponíveis) e mostre o número mínimo de notas necessárias para pagar o valor do saque (mostre usando uma DIV). -->
+            <br>Digite o valor para saque: <input type="text" id="valor">
+            <br><input type="button" value="Calcular" onclick="Go()">
+            <div id="esconder" class="mostrar">
+                <h1 id="qtd-notas100">Notas de 100: </h1>
+                <h1 id="qtd-notas50">Notas de 50: </h1>
+                <h1 id="qtd-notas10">Notas de 10: </h1>
+                <h1 id="qtd-notas5">Notas de 5: </h1>
+            </div>
+
+    </h4>
+    <script>
+        function Go() {
+
+        var valorSaque = document.getElementById("valor").value;
+        varSaque = 0;
+        valor100 = 0;
+        cont100 = 0;
+        cont50 = 0;
+        cont10 = 0;
+        cont5 = 0;
+        if (valorSaque % 5 == 0) {
+
+            if (valorSaque >= 100) {
+                while (valorSaque >= 100) {
+                    valorSaque = valorSaque - 100;
+                    cont100++;
+                }
+            }
+            if (valorSaque >= 50) {
+                while (valorSaque >= 50) {
+                    valorSaque = valorSaque - 50;
+                    cont50++;
+                }
+            }
+            if (valorSaque >= 10) {
+                while (valorSaque >= 10) {
+                    valorSaque = valorSaque - 10;
+                    cont10++;
+                }
+            }
+            if (valorSaque >= 5) {
+                while (valorSaque >= 5) {
+                    valorSaque = valorSaque - 5;
+                    cont5++;
+                }
+            }
+        } else {
+            document.getElementById("esconder").innerHTML = "<h4>Valor invalido</h4>"
+        }
+
+
+        document.getElementById("qtd-notas100").innerHTML += cont100;
+        document.getElementById("qtd-notas50").innerHTML += cont50;
+        document.getElementById("qtd-notas10").innerHTML += cont10;
+        document.getElementById("qtd-notas5").innerHTML += cont5;
+    }
+</script>
+
+
+</body>
+</html>

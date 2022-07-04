@@ -1,0 +1,98 @@
+<!DOCTYPE HTML>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="">
+    <title>Atv 1</title>
+</head>
+
+<body>
+
+    <h1>CONSULTÓRIO MÉDICO DO PELAIO</h1>
+    <p><h2><label for="paci"> Paciente:</label></h2>
+        <input type="text" id="paci" autofocus> <br /> <br />
+        <input type="button" value="Adicionar" id="btAdicionar">
+        <input type="button" value="Urgência" id="btUrgencia">
+        <input type="button" value="Atender" id="btAtender">
+    </p>
+    <h2>Em Atendimento:
+        <span id="botao" class="fonteAzul"></span>
+    </h2>
+    <h2>Lista De Espera: </h2>
+    <pre id="aguarde"></pre>
+    <script>
+        var vetor = [];
+        function inserirpessoa() {
+            var paci = document.getElementById("paci");
+            var aguarde = document.getElementById("aguarde");
+            var nome = paci.value;
+
+            if (nome == "") {
+                alert("Informe o nome do paciente");
+                inPaciente.focus();
+                return;
+            }
+
+            vetor.push(nome);
+            var lista = "";
+
+            for (i = 0; i < vetor.length; i++) {
+                lista += (i + 1) + ". " + vetor[i] + "\n";
+            }
+
+            aguarde.textContent = lista;
+            paci.value = "";
+            paci.focus();
+        }
+
+        var btAdicionar = document.getElementById("btAdicionar");
+        btAdicionar.addEventListener("click", inserirpessoa);
+
+        function atender() {
+            if (vetor.length == 0) {
+                paci.focus();
+                return;
+            }
+
+            var atendimento = document.getElementById("atendimento");
+            var aguarde = document.getElementById("aguarde");
+            var atender = vetor.shift();
+            botao.textContent = atender;
+            var lista = "";
+
+            for (i = 0; i < vetor.length; i++) {
+                lista += (i + 1) + ". " + vetor[i] + "\n";
+            }
+            aguarde.textContent = lista;
+        }
+        var btAtender = document.getElementById("btAtender");
+        btAtender.addEventListener("click", atender);
+
+        function urgencia() {
+            var paci = document.getElementById("paci");
+            var aguarde = document.getElementById("aguarde");
+            var nome = paci.value;
+
+            if (nome == "") {
+                alert("Informe o nome do paciente");
+                paci.focus();
+                return;
+            }
+
+            vetor.unshift(nome);
+            var lista = "";
+
+            for (i = 0; i < vetor.length; i++) {
+                lista += (i + 1) + ". " + vetor[i] + "\n";
+            }
+
+            aguarde.textContent = lista;
+            paci.value = "";
+            paci.focus();
+        }
+        var btUrgencia = document.getElementById("btUrgencia");
+        btUrgencia.addEventListener("click", urgencia);
+
+    </script>
+</body>
+</html>

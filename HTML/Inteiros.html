@@ -1,0 +1,46 @@
+<!DOCTYPE HTML>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" type="text/css" href="">
+<title></title>
+</head>
+<body>
+    <!--6) Escreva um programa que receba um conjunto de valores inteiros e positivos, calcule e imprima o maior e o menor valor do conjunto.
+Para encerrar a entrada de dados, deve ser digitado o valor zero. Para valores negativos, deve ser enviada uma mensagem.
+Esses valores (zero e negativos) não entrarão nos cálculos.-->
+
+Digite um conjunto de números inteiros positivos, digite ( 0 ) para encerrar a entrada dos números: <input type="button" onClick="opcao()" value="Começar">
+
+<script>
+    function opcao(){
+        var flag = 0;
+        var maior = 0;
+        var menor = 0 ; // Fiz e refiz isso milhoes de vezes, nao encontro o erro AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        do{
+        num = Number(prompt("Digite um valor"), "Digite aqui");
+        if (flag == 0 && num > 0){
+            maior = menor = num;
+            flag = 1;
+        }
+        if (num > 0){
+        if(num > maior){
+        maior = num;}
+        else if(num < menor){
+        menor = num;}
+        else if (num < 0){
+            alert("Números negativos não entram!")
+        }}
+        }while(num !=0);
+
+        alert("O maior número é: "+ maior + " e o menor número é: "+ menor);
+        
+    location.reload(); 
+    }
+
+
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,20 @@
+<html>
+<h3>Adição de texto em JS</h3>
+<textarea type="text" id="preparo" rows="6" cols="50"></textarea>
+<br>
+<button onclick="preparar()">Adicionar texto</button>
+<p id="paragrafo">Teste</p>
+
+<script>
+
+function preparar() {
+  var prep = document.getElementById("preparo").value;
+  var paragrafo  = document.getElementById("paragrafo").innerHTML;
+  paragrafo = paragrafo +"<p>"+prep+"</p>";
+  
+  document.getElementById("paragrafo").innerHTML = paragrafo;
+}
+
+</script>
+
+</html>

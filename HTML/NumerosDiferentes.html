@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" type="text/css" href="">
+<title></title>
+</head>
+<body>
+    <!--2) Ler dois valores numéricos e apresentar a diferença do maior para o menor.-->
+    Digite dois valores: <br>
+    Primeiro valor: <input type="text" id="A">
+    Segundo valor: <input type="text" id="B">
+    <input type="button" onclick="Calcular()" value="Verificar">
+
+    <script>
+        function Calcular(){
+            var A = Number(document.getElementById("A").value);
+            var B = Number(document.getElementById("B").value);
+            if(A > B){
+                alert("A Diferença entre os valores é de: " + (A-B));
+                location.reload();
+            }
+            else if(B > A){
+                alert("A diferença entre os valores é de: " + (B-A));
+                location.reload();
+            }
+            else
+            alert("Os valores são iguais!");
+            location.reload();
+        }
+    </script>
+</body>
+</html>

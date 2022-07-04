@@ -1,0 +1,54 @@
+<!DOCTYPE HTML>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="">
+    <title></title>
+</head>
+
+<body>
+    <form>
+        <h3>Digite valores inteiros:</h3>
+        Valor 1: <input type="text" id="num1">
+        Valor 2:<input type="text" id="num2">
+        Valor 3:<input type="text" id="num3">
+        Valor 4:<input type="text" id="num4">
+        Valor 5:<input type="text" id="num5"><br />
+        Valor 6:<input type="text" id="num6">
+        Valor 7:<input type="text" id="num7">
+        Valor 8:<input type="text" id="num8">
+        Valor 9:<input type="text" id="num9">
+        Valor 10:<input type="text" id="num10"><br /><br />
+
+        <label id="teste"></label>
+        <!--Valores aqui-->
+
+        <input type="button" onclick="Calcular()" value="Somar">
+
+        SOMA DOS ELEMENTOS DO VETOR:<label id="teste3"></label>
+
+    </form>
+
+    <script>
+
+        function Calcular() {
+
+            var arr = [(document.getElementById("num1").value), (document.getElementById("num2").value), (document.getElementById("num3").value), (document.getElementById("num4").value), (document.getElementById("num5").value), (document.getElementById("num6").value), (document.getElementById("num7").value), (document.getElementById("num8").value), (document.getElementById("num9").value), (document.getElementById("num10").value)];
+
+
+            /*var x = arr.reduce((total, currentElement) => total + currentElement);AAAAAAAAAAAAAAAAAAAAAA esta dando erro!!!!*/
+
+            var soma = 0;
+
+            for (var i = 0; i < arr.length; i++) {
+                soma += arr[i];
+            }
+
+
+            document.getElementById("teste3").innerHTML = ' ' + soma;
+        }
+    </script>
+</body>
+
+</html>

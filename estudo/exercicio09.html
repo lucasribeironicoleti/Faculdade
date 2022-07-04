@@ -1,0 +1,47 @@
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <link rel="stylesheet" href="css/style.css" type="text/css" media="all" />
+    <title>Exercicio 09</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+</head>
+
+<body>
+
+
+    <div>
+        <form>
+            <h3>DIGITE 05 NUMEROS</h3>
+            <input type="text" id="valor1">
+            <input type="text" id="valor2">
+            <input type="text" id="valor3">
+            <input type="text" id="valor4">
+            <input type="text" id="valor5">
+
+            <input type="button" onclick="calcular()" value="Mostar">
+
+            <label id="teste"></label>
+
+        </form>
+    </div>
+
+</body>
+
+<script>
+    
+    function calcular(){
+
+    var arr = [ (document.getElementById("valor1").value), (document.getElementById("valor2").value), (document.getElementById("valor3").value), (document.getElementById("valor4").value), (document.getElementById("valor5").value)];
+    
+    arr.sort(function(a,b){ 
+       
+       return b-a;});
+    
+        
+        document.getElementById("teste").innerHTML = 'DECRESCENTE: [ ' + arr +' ]';
+    }
+    
+
+</script>
+
+</html>

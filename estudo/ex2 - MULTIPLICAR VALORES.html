@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<title>Multiplicação</title>
+
+<head>
+
+</head>
+<script>
+function multiplicar(){
+
+var Num1=document.getElementById("quociente").value;
+
+var Num2=document.getElementById("multiplicador").value;
+
+Num1=Number(Num1);
+
+Num2=Number(Num2);
+
+var Num3=Num1*Num2;
+
+document.write(Num1 + "x" + Num2 + "=" + Num3);
+
+}
+
+</script>
+
+<body>
+<input type="number" id="quociente" name="quociente" > X <input type="number" id="multiplicador" name="multiplicador">
+<button type="button" onclick="multiplicar()">Multiplicar</button>
+
+</body>
+</html>

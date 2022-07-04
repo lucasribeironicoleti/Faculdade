@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" type="text/css" href="">
+<title></title>
+</head>
+<body>
+    <div>
+        <form>
+            <h3>Digite valores inteiros aleatórios:</h3>
+            <input type="text" id="num1">
+            <input type="text" id="num2">
+            <input type="text" id="num3">
+            <input type="text" id="num4">
+            <input type="text" id="num5">
+            <input type="button" onclick="Go()" value="Calcular">
+            <label id="teste"></label> <!--Valores aqui-->
+
+        </form>
+    </div>
+<script>
+    
+    function Go(){
+
+    var arr = [ (document.getElementById("num1").value), (document.getElementById("num2").value), (document.getElementById("num3").value), (document.getElementById("num4").value), (document.getElementById("num5").value)];
+    
+   var  x = arr.reverse(); // Volta os valores reversos do array
+        
+        document.getElementById("teste").innerHTML = '[ ' + x +' ]'; // Apresento os valores aquii
+    }
+    
+
+</script>
+</body>
+</html>

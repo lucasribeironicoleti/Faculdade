@@ -1,0 +1,25 @@
+<!DOCTYPE HTML>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" type="text/css" href="">
+<title></title>
+</head>
+<body>
+    <!--1. (4,0)Elaborar um programa para uma loja de ar condicionado. O programa deve ler o modelo  e o preço do aparelho. Apresentar o valor da entrada (50%) e o saldo em 12x (apresente dentro da DIV).-->
+    <h4>Promoção de Ar Condicionado. <br/>
+    Nome do Produto: <input type="text" id="nomeProduto"><br/>
+    Preço do Produto: <input type="text" id="precoProduto"><br/></h4>
+    <input type="button" value="Consultar Promoção" onclick="Go()"><br/>
+    <div id="mostrarPromocao"></div>
+
+    <script>
+        function Go(){
+            var nomeProduto = document.getElementById("nomeProduto").value;
+            var precoProduto = Number(document.getElementById("precoProduto").value);
+
+            document.getElementById("mostrarPromocao").innerHTML = "<h4>A promoção do " + nomeProduto + " com a primeira parcela de R$ " + (precoProduto/2) + " e dividido as 12 parcelas restantes em R$ " + ((precoProduto/2)/12).toFixed(2) + "</h4>";
+        }
+    </script>
+</body>
+</html>

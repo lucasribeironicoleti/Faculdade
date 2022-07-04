@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Execicio 10</title>
+
+
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+    <div class="row">
+        <div class="col-xs-offset-1 col-xs-10">
+            <div id="crud" class="panel panel-default">
+                <form action="" method="post" id="form_prepare">
+                    <div class="panel-heading">
+                        <h3>Agenda</h3>
+                    </div>
+                    <div class="painel-body">
+                        <div class="row">
+
+                            <div class="col-xs-2">
+                                <div class="form-group">
+                                    <label>Nome:</label>
+                                    <input id="nome" name="nome" class="form-control" type="text" placeholder="Digite o nome" />
+                                </div>
+                            </div>
+
+                            <div class="col-xs-2">
+                                <div class="form-group">
+                                    <label>Endereço:</label>
+                                    <input id="endereco" name="endereco" class="form-control" type="text" placeholder="Digite o endereço" />
+                                </div>
+                            </div>
+
+                            <div class="col-xs-2">
+                                <div class="form-group">
+                                    <label>Telefone:</label>
+                                    <input id="telefone" name="telefone" class="form-control" type="text" placeholder="Digite o endereço" />
+                                </div>
+                            </div>
+
+                            <div class="col-xs-2">
+                                <div class="form-group">
+                                    <label>Email:</label>
+                                    <input id="email" name="email" class="form-control" type="text" placeholder="Digite o endereço" />
+                                </div>
+                            </div>
+
+
+
+                            <div class="col-xs-2 pull-right">
+                                <div class="form-group">
+                                    <label></label>
+                                    <button class="btn btn-flat btn-block btn-success botaoInserir" id="ok" type="button" name="ok">Inserir</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                <table id="grid" style="width:100%" border="4">
+                    <thead>
+                        <tr>
+                            <th style="font-size:20px;text-align: center">Nome</th>
+                            <th style="font-size:20px;text-align: center">Endereço</th>
+                            <th style="font-size:20px;text-align: center">Telefone</th>
+                            <th style="font-size:20px;text-align: center">Email</th>
+
+
+                            <th style="font-size:20px;text-align: center">Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                    </tbody>
+                </table>
+                <div class="panel-footer" style="max-height: 300px; overflow-y: scroll;"></div>
+            </div>
+        </div>
+    </div>
+
+    
+</body>
+
+<script>
+    var count = 1;
+
+    class Pessoa {
+        constructor(nome, endereco, telefone, email) {
+            this.nome = nome;
+            this.endereco = endereco;
+            this.telefone = telefone;
+            this.email = email;
+        }
+    }
+
+    function Insert() {
+
+        let nome = document.getElementById('nome').value;
+        let endereco = document.getElementById('endereco').value;
+        let telefone = document.getElementById('telefone').value;
+        let email = document.getElementById('email').value;
+
+        let pessoa = new Pessoa(nome, endereco, telefone, email)
+
+        var tr =
+            '<tr>' +
+            '<td style="font-size:20px;text-align: center"  class="tdnome">' + pessoa.nome + '</td>' +
+            '<td style="font-size:20px;text-align: center" class="tdendereco" >' + pessoa.endereco + '</td>' +
+            '<td style="font-size:20px;text-align: center" class="tdtelefone" >' + pessoa.telefone + '</td>' +
+            '<td style="font-size:20px;text-align: center" class="tdemail" >' + pessoa.email + '</td>' +
+            '<td style="font-size:20px;text-align: center" class="tdBotoes">' +
+            '<button class="btn btn-flat  btn-success botaoEditar" id="botaoEditar" data-id="' + count + '" style="width: 150px" type="button" name="ok"  >Editar</button>' +
+            '<button class="btn btn-flat  btn-success botaoDeletar" style="width: 150px" id="botaoDeletar" type="button">Deletar</button>' +
+            '</td>' +
+            '</tr>'
+
+        $('#grid').find('tbody').append(tr);
+        $(".botaoEditar").on("click", Editar);
+        $(".botaoDeletar").off("click");
+        $(".botaoDeletar").on("click", Deletar);
+    };
+
+    function Editar() {
+
+        nome = $('#nome').val();
+        endereco = $('#endereco').val();
+        telefone = $('#telefone').val();
+        email = $('#email').val();
+
+
+        //alert;
+
+
+        if (nome == null) {
+            alert('nome nao pode ser vazia');
+            return false;
+        }
+
+        if (endereco == null) {
+            alert('endereço nao pode ser vazia');
+            return false;
+        }
+
+        if (telefone == null) {
+            alert('telefone nao pode ser vazia');
+            return false;
+        }
+
+        if (email == null) {
+            alert('email nao pode ser vazia');
+            return false;
+        }
+
+
+        $(this).closest("tr").remove();
+
+        // Primeiro verifica se a tag <tbody> existe. Adiciona um caso não exista
+        if ($("#grid tbody").length == 0) {
+            $("#grid").append("<tbody></tbody>");
+        }
+        var tr =
+            '<tr>' +
+            '<td style="font-size:20px;text-align: center"  class="tdnome">' + nome + '</td>' +
+            '<td style="font-size:20px;text-align: center" class="tdendereco" >' + endereco + '</td>' +
+            '<td style="font-size:20px;text-align: center" class="tdtelefone" >' + telefone + '</td>' +
+            '<td style="font-size:20px;text-align: center" class="tdemail" >' + email + '</td>' +
+            '<td style="font-size:20px;text-align: center" class="tdBotoes">' +
+            '<button class="btn btn-flat  btn-success botaoEditar" id="botaoEditar" data-id="' + count + '" style="width: 150px" type="button" name="ok"  >Editar</button>' +
+            '<button class="btn btn-flat  btn-success botaoDeletar" style="width: 150px" id="botaoDeletar" type="button">Deletar</button>' +
+            '</td>' +
+
+            '</tr>'
+        $('#grid').find('tbody').append(tr);
+        $(".botaoEditar").on("click", Editar);
+        $(".botaoDeletar").off("click");
+        $(".botaoDeletar").on("click", Deletar);
+
+    };
+
+    function Deletar() {
+        $(this).closest("tr").remove();
+    }
+    $(document).ready(function() {
+
+
+        $("#ok").on("click", function() {
+            var ok = true;
+            var txt = "";
+
+            if ($("#nome").val() == "") {
+                ok = false;
+                txt += "Preencha um nome. ";
+            }
+
+            if ($("#endereco").val() == "") {
+                ok = false;
+                txt += "Preencha um endereço. ";
+            }
+
+            if ($("#telefone").val() == "") {
+                ok = false;
+                txt += "Preencha um telefone. ";
+            }
+
+            if ($("#email").val() == "") {
+                ok = false;
+                txt += "Preencha um email. ";
+            }
+
+            if (!ok) {
+                alert(txt);
+            } else {
+                Insert($("#nome").val(), $("#endereco").val(), $("#telefone").val(), $("#email").val());
+                $("#nome").val("");
+                $("#endereco").val("");
+                $("#telefone").val("");
+                $("#email").val("");
+                count++;
+            }
+        });
+
+    });
+</script>
+
+</html>

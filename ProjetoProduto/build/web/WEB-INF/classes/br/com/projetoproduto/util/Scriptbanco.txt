@@ -1,0 +1,8 @@
+create table produto(
+idproduto serial not null,
+	descproduto varchar(40),
+	marcaproduto varchar(40),
+	modeloprodutobvarchar(40),
+	valorproduto numeric(9,2),
+	constraint pk_produto primary key(idproduto)
+);

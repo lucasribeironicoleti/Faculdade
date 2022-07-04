@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" type="text/css" href="">
+<title></title>
+</head>
+<body>
+  <!--  1) Ler quatro valores referentes a quatro notas escolares de um aluno e imprimir uma mensagem dizendo que o aluno foi aprovado, se o valor da média escolar for maior ou igual a 7. Se o valor da média for menor que 7, solicitar a nota de exame, somar com o valor da média e obter nova média. Se a nova média for maior ou igual a 5, apresentar uma mensagem dizendo que o aluno foi aprovado em exame. Se o aluno não foi aprovado, indicar uma mensagem informando esta condição. Apresentar junto com as mensagens o valor da média do aluno, para qualquer condição. -->
+    Conferir a média final dos alunos: <br>
+    Primeira Nota: <input type="text" id="notaUm">
+    Segunda Nota: <input type="text" id="notaDois">
+    Terceira Nota: <input type="text" id="notaTres">
+    Quarta Nota: <input type="text" id="notaQuatro"><br>
+    <input type="button" onclick="Calcular()" value="Calcular">
+
+    <script>
+    function Calcular(){
+      var notaUm = Number(document.getElementById("notaUm").value);
+      var noteDois = Number(document.getElementById("notaDois").value);
+      var notaTres = Number(document.getElementById("notaTres").value);
+      var notaQuatro = Number(document.getElementById("notaQuatro").value);
+      var media = ((notaUm + noteDois + notaTres + notaQuatro)/4);
+        if(media >=7){
+          alert("Aluno Aprovado!");
+          location.reload();}
+            else if(media >=4){
+            var notaExame = Number(prompt("Digite a nota do Exame do Aluno", "Digite aqui..."));
+            if((media+notaExame)/2>=5)
+              alert("Aprovado por exame!");
+              else
+              alert("Reprovado por exame!");
+        }
+        else
+        confirm("Aluno reprovado sem direito a exame!");
+        location.reload();
+      }
+    </script>
+</body>
+</html>

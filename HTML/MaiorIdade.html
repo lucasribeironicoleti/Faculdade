@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" type="text/css" href="">
+<title></title>
+</head>
+<body>
+    <!--5) Escreva um programa que receba a idade de 10 pessoas, calcule e imprima a quantidade de pessoas maiores de idade (idade >= 18 anos).-->
+    Digite a idade: <input type="text" id="idade">
+    <input type="button" onclick="total()" value="Contar">
+    <script>
+            maiorIdade = 0;
+            cont = 0;
+            function total(){
+                if(cont < 10){   // Essa caralha para em 11 nao em 10 AAAAAAAAAAAAAAAAAAAAAAA
+                    cont++;
+                    contar();
+                    document.getElementById("idade").value="";
+                    document.getElementById("idade").focus();
+                }
+                else if(cont == 10)
+                    alert(maiorIdade+" pessoas maiores de idade.");             
+            }
+        function contar(){
+            var idade = Number(document.getElementById("idade").value);
+                if (idade >= 18)
+                maiorIdade++; 
+            }       
+    </script>
+</body>
+</html>

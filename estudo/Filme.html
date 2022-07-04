@@ -1,0 +1,29 @@
+<!DOCTYPE HTML>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" type="text/css" href="">
+<title></title>
+</head>
+<body>
+
+Título do Filme : <br>
+ <input type="text" id="nomeFilme"> <br>
+ Duração em minutos: <br>
+ <input type="text" id="minutosFilme"> <br><br>
+ <input type="button" value="Converter em Horas e Minutos" onclick="Go()">
+
+<script>
+    function Go(){
+        var nomeFilme = document.getElementById("nomeFilme").value;
+        var minutosFilme = Number(document.getElementById("minutosFilme").value);
+        var horasfilme = Math.floor(minutosFilme/60);
+        var minutosRestantes = minutosFilme % 60;
+
+        alert("O filme " + nomeFilme + " tem duração de "+ horasfilme +" horas e "+ minutosRestantes + " minutos");
+        location.reload();
+    }
+</script>
+
+</body>
+</html>

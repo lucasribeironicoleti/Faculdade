@@ -1,0 +1,28 @@
+<!DOCTYPE HTML>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="">
+    <title></title>
+</head>
+
+<body>
+    <!--3. (4,0) Faça um programa que receba 1 valor inteiro (input text) e mostre a tabuada do número no html (usando laço de repetição (div ou table).-->
+    <h4>Tabuada JS<br />
+
+        Digite um valor: <input type="text" id="valor"><br /></h4>
+    <input type="button" value="Consultar Promoção" onclick="Go()"><br />
+    <div id="id"></div>
+
+    <script>
+        function Go() {
+            var valor = Number(document.getElementById("valor").value);
+            for (var i = 0; i<=10; i++){
+				document.write(valor+" x "+ i + " = " + i*valor + "<br>");
+			}
+        }
+    </script>
+</body>
+
+</html>

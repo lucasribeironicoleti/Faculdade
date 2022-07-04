@@ -1,0 +1,53 @@
+<!DOCTYPE HTML>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="">
+    <title>Atv 3</title>
+</head>
+
+<body>
+    <form>
+        <p><label for="nome">Nome:</label>
+          <input type="text" id="nome" required/></p>
+        <hr />
+        <p><label for="texto">E-mail:</label> 
+            <input type="text" id="texto" name="texto" required /></p>
+        <hr />
+        <p><label for="idade">Idade:</label> <input type="text" id="idade" required /></p>
+        <hr />
+        <p>Sexo: <input type="radio" name="sexo" value="masculino" id="masculino" required /><label for="masculino"> Masculino</label><br />
+            <input type="radio" name="sexo" value="feminino" id="feminino" required /><label for="feminino"> Feminino</label></p>
+        <hr />
+        <p>Hobbies: <input type="checkbox" name="nadar" id="nadar" value="nadar" checked /><label for="nadar">Nadar</label><br />
+            <input type="checkbox" name="correr" id="correr" value="correr" /><label for="correr">Correr</label><br />
+            <input type="checkbox" name="falar" id="falar" value="falar" /><label for="falar">Falar mal dos outros</label></p>
+        <hr />
+
+        <p required>Faixa etária: <select name="idade" id="idade">
+                <option value="crianca">Criança</option>
+                <option value="jovem">Jovem</option>
+                <option value="adulto">Adulto</option>
+            </select>
+        </p>
+        <hr />
+        <input type="reset" value="Cancelar">
+        <input type="button" onclick="calcular()" value="Enviar"> <!--Tentei usar SUBMIT mas estava dando erro, sorry, usei button mas o certo era SUBMIT-->
+    </form>
+
+
+    <script>
+    function calcular(){
+        var texto = document.getElementById("texto").value;
+        var RegExp = /^[\w]+@[\w]+\.[\w|\.]+$/;
+        if (RegExp.test(texto)) {
+            console.log("Formato válido!");
+        } else {
+            console.log("Formato inválido!");
+        }
+    }
+    </script>
+</body>
+
+</html>

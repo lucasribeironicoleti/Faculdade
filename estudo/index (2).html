@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <style>
+        *{
+            box-sizing: border-box;
+            margin: 0;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Lista de compras</h1>
+    <br>
+    <p>Quantidade:</p><input type="number" name="quantidade" id="quantia">
+    <br>
+    <p>Descrição do Item</p><input type="text" name="descricao" id="produto">
+    <br>
+    <p>Valor a Pagar:</p><input type="number" name="valor" id="total">
+    <br>
+    <br>
+    <input type="button" name="Inserir" value="Inserir na Lista" onclick="adicionar()">
+
+    <p>Quantidade:</p>
+    <ul id="Qtd">
+
+    </ul>
+    <br>
+    <p>Produtos:</p>
+    <ul id="lista">
+
+    </ul>
+    <br>
+    <p>Valor:</p>
+    <ul id="valor">
+
+    </ul>
+    <input type="button" name="Calcular" value="Calcular Total" onclick="calcular()">
+    <p>Total da Compra:<p id="pagar"></p></p>
+
+
+    <script>
+        function adicionar() {
+        var produto = document.getElementById("produto").value;
+        var lista  = document.getElementById("lista").innerHTML;
+        lista = lista +"<li>"+produto+"</li>";
+  
+        document.getElementById("lista").innerHTML = lista;
+
+        var quantia = document.getElementById("quantia").value;
+        var Qtd  = document.getElementById("Qtd").innerHTML;
+        Qtd = Qtd +"<li>"+quantia+"</li>";
+  
+        document.getElementById("Qtd").innerHTML = Qtd;
+
+        var total = document.getElementById("total").value;
+        var valor  = document.getElementById("valor").innerHTML;
+        valor = valor +"<li>"+total+"</li>";
+  
+        document.getElementById("valor").innerHTML = valor;
+    }
+
+    function calcular(){
+        var Qtd = $("Qtd").int();
+        var valor =$("valor").int();
+        
+        document.getElementById("pagar").numberContent = (Qtd + Qtd) * (valor + valor);
+        alert("eusou um alert")
+    }
+    </script>
+</body>
+</html>

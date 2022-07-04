@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+</head>
+<body>
+    <button type="button" onclick="mostrar();">Mostar qual dia é hoje.</button>
+    <div id="resposta">
+
+    </div>
+
+    <script type="text/javascript">
+        console.log();
+        function retornarDia(){
+            return ['domigo','segunda', 'terça', 'quarta', 'quinta', 'sexta', 'sabado'];
+        }
+        function mostrarMeses(){
+            return ['janeiro', 'fevereiro', 'março', 'abril', 'maio', 'junho', 'julho', 'agosto', 'setembro', 'outubro', 'novembro', 'dezembro'];
+        }
+        function mostrar(){
+            let diaPextenso = retornarDia();
+            let mesesAno = mostrarMeses();
+            console.log(diaPExtenso);
+            console.log(mesesAno);
+            let diadSemana = new Date().getDay();
+            let mes = new Date().getMonth();
+            document.getElementById("resposta").innerHTML += "Hoje é " + diaPextenso[diadSemana] + ", do mes de " + mesesAno[mes];
+        }
+    </script>
+</body>
+</html>

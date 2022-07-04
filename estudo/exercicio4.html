@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+</head>
+<body>
+    <script>
+        function Palindromo(str){
+            const len = string.length;
+            for(let i = 0; i < len / 2; i++){
+                if(string[i] !== string[len - 1 - i]){
+                    alert("Isto não é um palindromo");
+                }
+            }
+            alert("Isto é um palimdromo");
+        }
+        const string = prompt('Digite numeros ou palavras: ');  
+        const value = Palindromo(string);
+    </script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" type="text/css" href="">
+<title></title>
+</head>
+<body>
+<!--Faça um programa que receba 10 números, calcule e imprima a soma dos números pares e a soma dos números primos.-->
+<input type="button" onclick="agora()" value="Começar">
+    <script>
+        function agora(){
+
+    var i = 0, num, par = 0, impar = 0, cont = 0;
+    var divisores = 0;            
+
+    for(i = 0 ;i <4; i++) {        
+        num = parseInt(prompt("Informe um numero["+i+"]:")); 
+
+        if(!(num %2 == 0)) { 
+            par += num; 
+        } 
+        for ( let j = 1; j<=num; j++)
+        if(num % j == 0)
+   	        cont++;
+  
+                if(cont<=2){ 
+                    impar += num;
+        }
+    }
+    alert("A soma dos números pares é: "+par); 
+    alert("A soma dos números ímpares é: "+impar);
+        }
+
+</script>
+
+
+</body>
+</html>

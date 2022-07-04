@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" type="text/css" href="">
+<title></title>
+</head>
+    <body>
+        <div>
+            <form>
+                <h3>Digite valores negativos e positivos nos campos abaixo:</h3>
+                <input type="text" id="valor1">
+                <input type="text" id="valor2">
+                <input type="text" id="valor3">
+                <input type="text" id="valor4">
+                <input type="text" id="valor5">
+    
+                <input type="button" onclick="Go()" value="Mostar">
+                <label id="teste"></label>
+            </form>
+        </div>
+    
+    <script>
+        
+        function Go(){
+    
+        var arr = [ (document.getElementById("valor1").value), (document.getElementById("valor2").value), (document.getElementById("valor3").value), (document.getElementById("valor4").value), (document.getElementById("valor5").value)];
+        
+        function filtrarArray(elem, ind, obj) {
+            return (elem < 0);
+        }
+    
+        var x = arr.filter(filtrarArray).join(':');
+            document.getElementById("teste").innerHTML = '[ ' + x +' ]';
+        }
+        
+    
+    </script>
+    </body>
+    </html>

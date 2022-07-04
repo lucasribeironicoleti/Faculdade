@@ -1,0 +1,46 @@
+<!DOCTYPE HTML>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" type="text/css" href="">
+<title></title>
+</head>
+<body>
+<!--
+3) Faça um programa que mostre um menu com as seguintes opções: 
+• soma
+• raiz quadrada 
+• finalizar
+
+menu com tres opçoes 1 2 3
+opção 3 atulaliza apage e aparece adeus
+-->
+Para realizar a Soma digite ( 1 ), Raiz Quadrada digite ( 2 ), para Sair digite ( 0 ).
+<input type="text" id="opcao">
+<input type="button" onclick="Opcao()" value="Próximo">
+
+<script>
+    function Opcao(){
+        var opcao = Number(document.getElementById("opcao").value);
+        if(opcao == 1){
+           var A =  Number(prompt("Digite um valor: "));
+           var B = Number(prompt("Digite um segundo valor: "));
+           alert("A soma dos valores é de: "+ (A+B));
+           location.reload();
+        }
+        else if (opcao == 2){
+            var numero = Number(prompt("Digite um valor para realizar a raiz quadrada: "));
+            alert("Sua raiz é de: "+ Math.sqrt(numero));
+        }
+        else if(opcao == 0){
+            alert("Adeus!")
+            location.reload();
+        }
+        else
+        alert("Opção errada!! Tente novamente!");
+        location.reload();
+        }
+</script>
+
+</body>
+</html>

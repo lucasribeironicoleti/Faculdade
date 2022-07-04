@@ -1,0 +1,51 @@
+<!DOCTYPE HTML>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="">
+    <title></title>
+</head>
+
+<body>
+
+
+    <div>
+        <form>
+           
+           Array definido:<label id="teste1"></label><br>    
+
+            <input type="button" onclick="Go()" value="Mostar">
+
+            <label id="teste2"></label>
+
+        </form>
+    </div>
+
+</body>
+
+<script>
+    
+     
+
+    var arr = [ 0 , 'Gabriel ', 2 , 3 , 'Pelaio'];
+    
+    document.getElementById("teste1").innerHTML = '[ ' + arr +' ]';
+    
+    function Go(){
+        
+    function filtrarArray(ind) {
+      return (typeof ind == 'string');
+        
+    }
+
+    var x = arr.filter(filtrarArray);
+
+    
+        document.getElementById("teste2").innerHTML = '[ ' + x +' ]';
+    }
+    
+
+</script>
+
+</html>

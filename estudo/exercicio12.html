@@ -1,0 +1,113 @@
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <link rel="stylesheet" href="css/style.css" type="text/css" media="all" />
+    <title>Exercicio 12</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+</head>
+
+<body>
+    
+    <div>
+
+        <form>
+
+
+
+            <h3>Pilha</h3>
+
+            <label> Informe os Valores: </label><input type="text" id="caixa">
+
+            <input id="botao" type="button" onclick="inserirPilha()" value="Inserir">
+
+            <input id="botao" type="button" onclick="removerPilha()" value="Remover"><br>
+
+            <br><label id="teste"></label>
+
+        </form>
+
+        <form>
+
+            <h3>Fila</h3>
+
+            <label>Informe os Valores:</label><input type="text" id="caixa2">
+
+            <input id="botao" type="button" onclick="inserirFila()" value="Inserir">
+
+            <input id="botao" type="button" onclick="removerFila()" value="Remover">
+
+            <br><label id="teste2"></label>
+
+        </form>
+
+    </div>
+
+</body>
+
+<script>
+    
+   
+    let pilha = [];
+
+
+    function inserirPilha() {
+
+        pilha.push(document.getElementById('caixa').value);
+        mostrarPilha();
+        limpa();
+
+    }
+
+    function removerPilha() {
+
+        pilha.pop(document.getElementById('caixa').value);
+        mostrarPilha();
+
+    }
+
+    function mostrarPilha() {
+
+        document.getElementById("teste").innerHTML = '[ ' + pilha + ' ]';
+
+    }
+
+
+
+    let fila = [];
+
+    function inserirFila() {
+
+        fila.push(document.getElementById('caixa2').value);
+        mostrarFila();
+        limpa2();
+
+    }
+
+    function removerFila() {
+
+        fila.shift(document.getElementById('caixa2').value);
+        mostrarFila();
+
+    }
+
+    function mostrarFila() {
+
+        document.getElementById("teste2").innerHTML = '[ ' + fila + ' ]';
+    }
+
+    function limpa() {
+
+        if (document.getElementById('caixa').value != "") {
+            document.getElementById('caixa').value = "";
+        }
+    }
+
+    function limpa2() {
+
+        if (document.getElementById('caixa2').value != "") {
+            document.getElementById('caixa2').value = "";
+        }
+    }
+</script></html>

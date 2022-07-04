@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" type="text/css" href="">
+<title></title>
+</head>
+<body>
+    <!--4) Faça um programa que receba três notas de um aluno, calcule e imprima a média aritmética entre essas três notas e uma mensagem que segue a tabela abaixo:
+Média		Mensagem
+0 |__ 5 	reprovado
+5 |__ 7 	exame
+7 |__10		aprovado-->
+Digite as notas do aluno para realizar a média aritimetica!<br>
+Primeira nota: <input type="text" id="n1">
+Segunda nota: <input type="text" id="n2">
+Terceira nota: <input type="text" id="n3">
+<input type="button" value="Calcular" onclick="calcular()">
+
+<script>
+    function calcular(){
+        var n1 = Number(document.getElementById("n1").value);
+        var n2 = Number(document.getElementById("n2").value);
+        var n3 = Number(document.getElementById("n3").value);
+        var media = (n1+n2+n3)/3;
+        if(media >= 7){
+            alert("Aluno aprovado!");
+            location.reload();
+        }
+        else if(media < 5){
+            alert("Aluno reprovado!");
+            location.reload();
+        }
+        else
+        alert("Aluno de exame!");
+        location.reload();
+    }
+</script>
+</body>
+</html>

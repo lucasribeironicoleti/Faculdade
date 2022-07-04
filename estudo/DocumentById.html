@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
+</head>
+<body>
+    <hr/>
+Valor <input type="text" id="valor">
+<input type="button" onclick="calcula()" value="Calcular">
+Anterior <input type="text" id="anterior">
+Posterior <input type="text" id="posterior">
+<hr/>
+
+Quantidade de Clientes: <input type="text" id="quantidadeClientes">
+Valor da Conta: <input type="text" id="valorConta">
+<input type="button" onclick="somar()" value="Calcular">
+<input type="text" id="resultado">
+<hr/>
+
+<script>
+
+function calcula(){
+var num = Number(document.getElementById("valor").value);
+document.getElementById("anterior").value = num-1;
+document.getElementById("posterior").value = num+1;
+}
+
+function somar(){
+var quantidadeClientes = Number(document.getElementById("quantidadeClientes").value);
+var valorConta = Number(document.getElementById("valorConta").value);
+document.getElementById("resultado").value = (valorConta/quantidadeClientes).toFixed(2);
+
+}
+</script>
+</body>
+</html>

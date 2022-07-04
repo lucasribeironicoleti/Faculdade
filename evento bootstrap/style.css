@@ -1,0 +1,42 @@
+.selector-for-some-widget {
+    box-sizing: content-box;
+}
+.nomes{
+  background-color: crimson;
+}
+.nome{
+  font-family: 'Bebas Neue', cursive;
+  font-size: 4em;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  width: 100%;
+  color: white;
+}
+.nome2{
+  font-family: 'Bebas Neue', cursive;
+  font-size: 2em;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  color: white;
+  background-color: rgb(73, 9, 22);
+}
+.card-title, .card-text{
+  font-family: 'Lobster', cursive;
+}
+.accordion{
+  color: crimson;
+}
+.margem{
+  padding: 2em;
+}
+h2{
+  text-align: center;
+}
+.card-groud p, .atençao{
+  color: crimson;
+}
+.card{
+  background-color: rgba(0, 0, 0, 0.207);
+}
