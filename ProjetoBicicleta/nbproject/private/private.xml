@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/C:/Users/lucas/Desktop/ProjetoBicicleta/src/java/br/com/projetobicicleta/model/Produto.java</file>
+            <file>file:/C:/Users/lucas/Desktop/ProjetoBicicleta/web/index.jsp</file>
+            <file>file:/C:/Users/lucas/Desktop/ProjetoBicicleta/src/java/br/com/projetobicicleta/dao/BebidaDAOImpl.java</file>
+            <file>file:/C:/Users/lucas/Desktop/ProjetoBicicleta/src/java/br/com/projetobicicleta/dao/ProdutoDAOImpl.java</file>
+            <file>file:/C:/Users/lucas/Desktop/ProjetoBicicleta/web/alterarproduto.jsp</file>
+            <file>file:/C:/Users/lucas/Desktop/ProjetoBicicleta/web/cadastrarproduto.jsp</file>
+            <file>file:/C:/Users/lucas/Desktop/ProjetoBicicleta/src/java/br/com/projetobicicleta/util/databasebicicleta.txt</file>
+            <file>file:/C:/Users/lucas/Desktop/ProjetoBicicleta/src/java/br/com/projetobicicleta/model/TipoBebida.java</file>
+            <file>file:/C:/Users/lucas/Desktop/ProjetoBicicleta/web/crianca.png</file>
+            <file>file:/C:/Users/lucas/Desktop/ProjetoBicicleta/src/java/br/com/projetobicicleta/util/ConnectionFactory.java</file>
+            <file>file:/C:/Users/lucas/Desktop/ProjetoBicicleta/web/listarprodutos.jsp</file>
+            <file>file:/C:/Users/lucas/Desktop/ProjetoBicicleta/src/java/br/com/projetobicicleta/dao/TipoBebidaDAOImpl.java</file>
+            <file>file:/C:/Users/lucas/Desktop/ProjetoBicicleta/src/java/br/com/projetobicicleta/controller/CarregarProduto.java</file>
+            <file>file:/C:/Users/lucas/Desktop/ProjetoBicicleta/src/java/br/com/projetobicicleta/model/Bebida.java</file>
+        </group>
+    </open-files>
+</project-private>

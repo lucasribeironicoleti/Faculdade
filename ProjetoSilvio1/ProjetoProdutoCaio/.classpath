@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="ProjetoProduto/build/generated/src"/>
+	<classpathentry kind="src" path="ProjetoProduto/src/java"/>
+	<classpathentry kind="lib" path="ProjetoProduto/build/web/WEB-INF/lib/postgresql-42.2.16.jar"/>
+	<classpathentry kind="lib" path="ProjetoProduto/build/web/WEB-INF/lib/postgresql-9.4.1209.jar"/>
+	<classpathentry kind="output" path="ProjetoProduto/build/generated/classes"/>
+</classpath>

@@ -1,0 +1,31 @@
+create table produto(
+	idproduto serial not null,
+	estoque varchar(40),
+	unidade varchar(40),
+	constraint pk_produto primary key(idproduto)
+);
+
+create table tipobebida(
+	idtipobebida serial not null,
+	nometipobebida varchar(30),
+	constraint pk_tipobebida primary key(idtipobebida)
+);
+
+create table bebida(
+	idbebida serial not null,
+	valor integer,
+	litros integer,
+	idproduto integer,
+	idtipobebida integer,
+	constraint pk_bebida primary key(idbebida),
+	constraint fk_bebida_tipobebida foreign key(idtipobebida) references tipobebida(idtipobebida),
+	constraint fk_bebida_produto foreign key(idproduto) references produto(idproduto) ON DELETE CASCADE
+);
+
+
+insert into tipobebida (idtipobebida, nometipobebida) values (1, 'Cerveja');
+insert into tipobebida (idtipobebida, nometipobebida) values (2, 'Wiskhi');
+insert into tipobebida (idtipobebida, nometipobebida) values (3, 'Vinho');
+insert into tipobebida (idtipobebida, nometipobebida) values (4, 'Cachaça');
+insert into tipobebida (idtipobebida, nometipobebida) values (5, 'Liquor');
+insert into tipobebida (idtipobebida, nometipobebida) values (6, 'Gin');
