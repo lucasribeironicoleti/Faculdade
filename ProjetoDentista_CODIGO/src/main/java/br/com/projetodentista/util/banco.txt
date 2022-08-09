@@ -1,0 +1,7 @@
+create table dentista(
+	idDentista serial primary key,
+	nome_dentista varchar(100) not null,
+	telefone varchar(11) not null,
+	especialidade varchar(50) not null,
+	cro varchar(15) not null
+);
